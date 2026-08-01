@@ -1,0 +1,2 @@
+source /home/meteora/esp/esp-idf/zclaw-console/build/gdbinit/symbols
+source /home/meteora/esp/esp-idf/zclaw-console/build/gdbinit/connect

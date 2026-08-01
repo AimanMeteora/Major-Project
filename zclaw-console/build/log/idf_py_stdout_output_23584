@@ -1,0 +1,297 @@
+stage bootloader
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode      PI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy sout: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=394f4h (234740) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=0004951c vaddr=3fc9b100 size=04b34h ( 19252) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0004e058 vaddr=40374000 size=01fc0h (  8128) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=bab74h (764788) map[0m
+[0;32mI (276) esp_image: segment 4: paddr=0010ab9c vaddr=40375fc0 size=15104h ( 86276) load[0m
+[0;32mI (295) esp_image: segment 5: paddr=0011fca8 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (315) cpu_start: Multicore app[0m
+[0;32mI (324) cpu_start: Pro cpu start user code[0m
+[0;32mI (324) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     zclaw-console[0m
+[0;32mI (328) app_init: App version:      v5.4.1[0m
+[0;32mI (332) app_init: Compile time:     Jul 24 2026 22:16:00[0m
+[0;32mI (337) app_init: ELF file SHA256:  edf740285...[0m
+[0;32mI (341) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (345) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (349) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (353) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (357) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FCB1F08 len 00037808 (222 KiB): RAM[0m
+[0;32mI (368) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (374) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (379) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (385) spi_flash: detected chip: gd[0m
+[0;32mI (387) spi_flash: flash io: dio[0m
+[0;33mW (390) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (403) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (412) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (419) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (466) pp: pp rom version: e7ae62f[0m
+[0;32mI (466) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (476) wifi:wifi driver task: 3fcbbdd4, prio:23, stack:6656, core=0[0m
+[0;32mI (486) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (486) wifi:wifi certification version: v7.0[0m
+[0;32mI (486) wifi:config NVS flash: enabled[0m
+[0;32mI (486) wifi:config nano formatting: disabled[0m
+[0;32mI (486) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (496) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (496) wifi:Init management short buffer num: 32[0m
+[0;32mI (496) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (506) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (506) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (516) wifi:Init static rx buffer num: 10[0m
+[0;32mI (516) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (516) wifi_init: rx ba win: 6[0m
+[0;32mI (526) wifi_init: accept mbox: 6[0m
+[0;32mI (526) wifi_init: tcpip mbox: 32[0m
+[0;32mI (526) wifi_init: udp mbox: 6[0m
+[0;32mI (536) wifi_init: tcp mbox: 6[0m
+[0;32mI (536) wifi_init: tcp tx win: 5760[0m
+[0;32mI (536) wifi_init: tcp rx win: 5760[0m
+[0;32mI (536) wifi_init: tcp mss: 1440[0m
+[0;32mI (546) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (546) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (556) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (556) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (606) wifi:mode : sta (f4:12:fa:43:66:bc)[0m
+[0;32mI (606) wifi:enable tsf[0m
+[0;32mI (606) auth_console: Waiting for Wi-Fi connection...[0m
+[0;32mI (616) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (616) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1306) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1346) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1386) wifi:connected with AndroidAP, aid = 10, channel 6, BW20, bssid = 86:6f:46:6a:7b:62[0m
+[0;32mI (1386) wifi:security: WPA3-SAE, phy: bgn, rssi: -44[0m
+[0;32mI (1386) wifi:pm start, type: 1[0m
+
+[0;32mI (1396) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1396) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1426) wifi:<ba-add>idx:0 (ifx:0, 86:6f:46:6a:7b:62), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1436) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1436) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2466) esp_netif_handlers: sta ip: 10.241.108.101, mask: 255.255.255.0, gw: 10.241.108.241[0m
+[0;32mI (2466) auth_console: Connected with IP: 10.241.108.101[0m
+[0;32mI (2466) auth_console: Wi-Fi connected successfully.[0m
+[0;32mI (2466) memory: NVS initialized[0m
+[0;32mI (2476) memory: Retrieved: llm_backend = ollama[0m
+[0;32mI (2476) memory: Retrieved: api_key = <redacted>[0m
+[0;32mI (2486) memory: Retrieved: llm_model = qwen2.5:0.5b[0m
+[0;32mI (2486) memory: Retrieved: llm_api_url = http://10.241.108.4:11434/v1/chat/completions[0m
+[0;32mI (2496) llm: Backend: Ollama, Model: qwen2.5:0.5b[0m
+[0;32mI (2496) llm: Using custom LLM API endpoint override[0m
+[0;32mI (2506) agent: Agent task started[0m
+[0;32mI (2506) agent: Agent started[0m
+[0;32mI (2506) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2516) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2526) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2536) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2546) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2546) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2556) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2566) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2576) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2586) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2596) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[5n
+=======================================================
+ Welcome to Secure ESP32 Console + zclaw AI Runtime
+ System initialized successfully.
+=======================================================
+
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+[6n I (2696) main_task: Returned from app_main()
+[999C [6n [149Dguest@esp32>  [0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logi[18C[0Kguest@esp32>  login[19C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login A[21C[0Kguest@esp32>  login Ad[22C[0Kguest@esp32>  login Adm[23C[0Kguest@esp32>  login Admi[24C[0Kguest@esp32>  login Admin[25C[0Kguest@esp32>  login Admin [26C[0Kguest@esp32>  login Admin A[27C[0Kguest@esp32>  login Admin [26C[0Kguest@esp32>  login Admin[25C[0Kguest@esp32>  login Admi[24C[0Kguest@esp32>  login Adm[23C[0Kguest@esp32>  login Ad[22C[0Kguest@esp32>  login A[21C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login a[21C[0Kguest@esp32>  login ad[22C[0Kguest@esp32>  login adm[23C[0Kguest@esp32>  login admi[24C[0Kguest@esp32>  login admin[25C[0Kguest@esp32>  login admin [26C[0Kguest@esp32>  login admin A[27C[0Kguest@esp32>  login admin Ad[28C[0Kguest@esp32>  login admin Adm[29C[0Kguest@esp32>  login admin Admi[30C[0Kguest@esp32>  login admin Admin[31C[0Kguest@esp32>  login admin Admin_[32C[0Kguest@esp32>  login admin Admin_1[33C[0Kguest@esp32>  login admin Admin_12[34C[0Kguest@esp32>  login admin Admin_123[35C[0Kguest@esp32>  login admin Admin_1234[36C5[0Kguest@esp32>  login admin Admin_12345![38C[0Kguest@esp32>  login admin Admin_12345![38C
+Login successful! Role: Admin
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  h[15C[0Kguest@esp32>  he[16C[0Kguest@esp32>  hel[17C[0Kguest@esp32>  help [<string>] [-v <0|1>][18C[0Kguest@esp32>  help[18C
+login 
+  Login: login <user> <pass>
+
+logout 
+  Logout active session
+
+chat 
+  Send message to AI: chat <msg>
+
+user_add 
+  Create user: user_add <user> <pass> <admin|user>
+
+user_upd 
+  Modify user: user_upd <user> <pass> <admin|user>
+
+user_del 
+  Delete user: user_del <user>
+
+user_list 
+  List users
+
+see_logs 
+  View audit traces
+
+toggle_relay 
+  Toggle pin state: toggle_relay <pin>
+
+pin_status 
+  Check pin voltage: pin_status <pin>
+
+help  [<string>] [-v <0|1>]
+  Print the summary of all registered commands if no arguments are given,
+  otherwise print summary of given command.
+      <string>  Name of command
+  -v, --verbose=<0|1>  If specified, list console commands with given verbose level
+
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aia[26C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C
+
+[Security Notice] Session timed out due to inactivity. Logged out user 'admin'.
+guest@esp32> [0Kguest@esp32>  user_add Aiman l[30C[0Kguest@esp32>  user_add Aiman lo[31C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman logi[33Cn[0Kguest@esp32>  user_add Aiman login [35C[0Kguest@esp32>  user_add Aiman login[34C[0Kguest@esp32>  user_add Aiman logi[33C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman log[32C[0Kguest@esp32>  user_add Aiman lo[31C[0Kguest@esp32>  user_add Aiman l[30C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user[18C[0Kguest@esp32>  use[17C[0Kguest@esp32>  us[16C[0Kguest@esp32>  u[15C[0Kguest@esp32>  [14C[0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logi[18C[0Kguest@esp32>  login[19C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login a[21C[0Kguest@esp32>  login ad[22C[0Kguest@esp32>  login adm[23C[0Kguest@esp32>  login admi[24C[0Kguest@esp32>  login admin[25C[0Kguest@esp32>  login admin [26C[0Kguest@esp32>  login admin A[27C[0Kguest@esp32>  login admin Ad[28C[0Kguest@esp32>  login admin Adm[29C[0Kguest@esp32>  login admin Admi[30C[0Kguest@esp32>  login admin Admin[31C[0Kguest@esp32>  login admin Admin_[32C[0Kguest@esp32>  login admin Admin_1[33C[0Kguest@esp32>  login admin Admin_12[34C[0Kguest@esp32>  login admin Admin_123[35C[0Kguest@esp32>  login admin Admin_1234[36C5[0Kguest@esp32>  login admin Admin_12345![38C[0Kguest@esp32>  login admin Admin_12345![38C
+Login successful! Role: Admin
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  l[15C[0Kguest@esp32>  [14C[0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add AIm[26C[0Kguest@esp32>  user_add AIma[27C[0Kguest@esp32>  user_add AIman[28C[0Kguest@esp32>  user_add AIman [29C[0Kguest@esp32>  user_add AIman[28C[0Kguest@esp32>  user_add AIma[27C[0Kguest@esp32>  user_add AIm[26C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman m[30Cete[0Kguest@esp32>  user_add Aiman meteo[34C[0Kguest@esp32>  user_add Aiman meteor[35C[0Kguest@esp32>  user_add Aiman meteora[36C[0Kguest@esp32>  user_add Aiman meteora_[37C[0Kguest@esp32>  user_add Aiman meteora_1[38C[0Kguest@esp32>  user_add Aiman meteora_12[39C[0Kguest@esp32>  user_add Aiman meteora_123[40C[0Kguest@esp32>  user_add Aiman meteora_123![41C[0Kguest@esp32>  user_add Aiman meteora_123[40C[0Kguest@esp32>  user_add Aiman meteora_12[39C[0Kguest@esp32>  user_add Aiman meteora_1[38C[0Kguest@esp32>  user_add Aiman meteora_[37C[0Kguest@esp32>  user_add Aiman meteora_5[38C[0Kguest@esp32>  user_add Aiman meteora_55[39C[0Kguest@esp32>  user_add Aiman meteora_555[40C[0Kguest@esp32>  user_add Aiman meteora_555![41C[0Kguest@esp32>  user_add Aiman meteora_555![41C
+Usage: user_add <username> <password> <role: admin|user>
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user [19C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add AIM[26C[0Kguest@esp32>  user_add AIMa[27C[0Kguest@esp32>  user_add AIMan[28C[0Kguest@esp32>  user_add AIMa[27C[0Kguest@esp32>  user_add AIM[26C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman m[30C[0Kguest@esp32>  user_add Aiman me[31C[0Kguest@esp32>  user_add Aiman met[32C[0Kguest@esp32>  user_add Aiman mete[33C[0Kguest@esp32>  user_add Aiman meteo[34C[0Kguest@esp32>  user_add Aiman meteor[35C[0Kguest@esp32>  user_add Aiman meteora[36C[0Kguest@esp32>  user_add Aiman meteora_[37C[0Kguest@esp32>  user_add Aiman meteora_1[38C[0Kguest@esp32>  user_add Aiman meteora_12[39C[0Kguest@esp32>  user_add Aiman meteora_123[40C[0Kguest@esp32>  user_add Aiman meteora_123![41C[0Kguest@esp32>  user_add Aiman meteora_123! [42C[0Kguest@esp32>  user_add Aiman meteora_123! u[43C[0Kguest@esp32>  user_add Aiman meteora_123! us[44C[0Kguest@esp32>  user_add Aiman meteora_123! use[45C[0Kguest@esp32>  user_add Aiman meteora_123! user[46C[0Kguest@esp32>  user_add Aiman meteora_123! user[46C
+Password Error: Must include uppercase, lowercase, numbers, and symbols.
+Account creation aborted due to weak password complexity.
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add AIM[26C[0Kguest@esp32>  user_add AIMa[27C[0Kguest@esp32>  user_add AIMan[28C[0Kguest@esp32>  user_add AIMan [29C[0Kguest@esp32>  user_add AIMan[28C[0Kguest@esp32>  user_add AIMa[27C[0Kguest@esp32>  user_add AIM[26C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman m[30C[0Kguest@esp32>  user_add Aiman me[31C[0Kguest@esp32>  user_add Aiman met[32C[0Kguest@esp32>  user_add Aiman mete[33C[0Kguest@esp32>  user_add Aiman meteo[34C[0Kguest@esp32>  user_add Aiman meteor[35C[0Kguest@esp32>  user_add Aiman meteora[36C[0Kguest@esp32>  user_add Aiman meteora_[37C[0Kguest@esp32>  user_add Aiman meteora_5[38C[0Kguest@esp32>  user_add Aiman meteora_55[39C[0Kguest@esp32>  user_add Aiman meteora_555[40C[0Kguest@esp32>  user_add Aiman meteora_5555[41C[0Kguest@esp32>  user_add Aiman meteora_55555[42C[0Kguest@esp32>  user_add Aiman meteora_55555![43C[0Kguest@esp32>  user_add Aiman meteora_55555![43C
+Usage: user_add <username> <password> <role: admin|user>
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add AI[25Cma[0Kguest@esp32>  user_add AIm[26C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman_[29C[0Kguest@esp32>  user_add Aiman_5[30C[0Kguest@esp32>  user_add Aiman_55[31C[0Kguest@esp32>  user_add Aiman_555[32C[0Kguest@esp32>  user_add Aiman_5555[33C[0Kguest@esp32>  user_add Aiman_55555[34C[0Kguest@esp32>  user_add Aiman_55555![35C[0Kguest@esp32>  user_add Aiman_55555! [36C[0Kguest@esp32>  user_add Aiman_55555! u[37C[0Kguest@esp32>  user_add Aiman_55555! us[38C[0Kguest@esp32>  user_add Aiman_55555! use[39C[0Kguest@esp32>  user_add Aiman_55555! user[40C[0Kguest@esp32>  user_add Aiman_55555! user[40C
+Usage: user_add <username> <password> <role: admin|user>
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  [14C
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  [14C
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  [14C
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add AIm[26C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman m[30C[0Kguest@esp32>  user_add Aiman me[31C[0Kguest@esp32>  user_add Aiman met[32C[0Kguest@esp32>  user_add Aiman mete[33C[0Kguest@esp32>  user_add Aiman meteo[34C[0Kguest@esp32>  user_add Aiman meteor[35C[0Kguest@esp32>  user_add Aiman meteora[36C[0Kguest@esp32>  user_add Aiman meteora_[37C[0Kguest@esp32>  user_add Aiman meteora_5[38C[0Kguest@esp32>  user_add Aiman meteora_55[39C[0Kguest@esp32>  user_add Aiman meteora_555[40C[0Kguest@esp32>  user_add Aiman meteora_5555[41C[0Kguest@esp32>  user_add Aiman meteora_55555[42C[0Kguest@esp32>  user_add Aiman meteora_55555![43C[0Kguest@esp32>  user_add Aiman meteora_55555! [44C[0Kguest@esp32>  user_add Aiman meteora_55555! u[45C[0Kguest@esp32>  user_add Aiman meteora_55555! us[46C[0Kguest@esp32>  user_add Aiman meteora_55555! use[47C[0Kguest@esp32>  user_add Aiman meteora_55555! user[48C[0Kguest@esp32>  user_add Aiman meteora_55555! user[48C
+Password Error: Must include uppercase, lowercase, numbers, and symbols.
+Account creation aborted due to weak password complexity.
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add [23C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add AIm[26C[0Kguest@esp32>  user_add AIma[27C[0Kguest@esp32>  user_add AIman[28C[0Kguest@esp32>  user_add AIman [29C[0Kguest@esp32>  user_add AIman[28C[0Kguest@esp32>  user_add AIma[27C[0Kguest@esp32>  user_add AIm[26C[0Kguest@esp32>  user_add AI[25C[0Kguest@esp32>  user_add A[24C[0Kguest@esp32>  user_add Ai[25C[0Kguest@esp32>  user_add Aim[26C[0Kguest@esp32>  user_add Aima[27C[0Kguest@esp32>  user_add Aiman[28C[0Kguest@esp32>  user_add Aiman [29C[0Kguest@esp32>  user_add Aiman M[30C[0Kguest@esp32>  user_add Aiman Me[31C[0Kguest@esp32>  user_add Aiman Met[32C[0Kguest@esp32>  user_add Aiman Mete[33C[0Kguest@esp32>  user_add Aiman Meteo[34C[0Kguest@esp32>  user_add Aiman Meteor[35C[0Kguest@esp32>  user_add Aiman Meteora[36C[0Kguest@esp32>  user_add Aiman Meteora_[37C[0Kguest@esp32>  user_add Aiman Meteora_5[38C[0Kguest@esp32>  user_add Aiman Meteora_55[39C[0Kguest@esp32>  user_add Aiman Meteora_555[40C[0Kguest@esp32>  user_add Aiman Meteora_5555[41C[0Kguest@esp32>  user_add Aiman Meteora_55555[42C[0Kguest@esp32>  user_add Aiman Meteora_55555![43C[0Kguest@esp32>  user_add Aiman Meteora_55555! [44C[0Kguest@esp32>  user_add Aiman Meteora_55555! u[45C[0Kguest@esp32>  user_add Aiman Meteora_55555! us[46C[0Kguest@esp32>  user_add Aiman Meteora_55555! use[47C[0Kguest@esp32>  user_add Aiman Meteora_55555! user[48C[0Kguest@esp32>  user_add Aiman Meteora_55555! user[48C
+User 'Aiman' created successfully.
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  h[15C[0Kguest@esp32>  he[16C[0Kguest@esp32>  hel[17C[0Kguest@esp32>  help [<string>] [-v <0|1>][18C[0Kguest@esp32>  help[18C
+login 
+  Login: login <user> <pass>
+
+logout 
+  Logout active session
+
+chat 
+  Send message to AI: chat <msg>
+
+user_add 
+  Create user: user_add <user> <pass> <admin|user>
+
+user_upd 
+  Modify user: user_upd <user> <pass> <admin|user>
+
+user_del 
+  Delete user: user_del <user>
+
+user_list 
+  List users
+
+see_logs 
+  View audit traces
+
+toggle_relay 
+  Toggle pin state: toggle_relay <pin>
+
+pin_status 
+  Check pin voltage: pin_status <pin>
+
+help  [<string>] [-v <0|1>]
+  Print the summary of all registered commands if no arguments are given,
+  otherwise print summary of given command.
+      <string>  Name of command
+  -v, --verbose=<0|1>  If specified, list console commands with given verbose level
+
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logo[18C[0Kguest@esp32>  logou[19C[0Kguest@esp32>  logout[20C[0Kguest@esp32>  logout[20C
+Logged out user 'admin'.
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logi[18C[0Kguest@esp32>  login[19C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login A[21C[0Kguest@esp32>  login AI[22C[0Kguest@esp32>  login AIm[23C[0Kguest@esp32>  login AIma[24C[0Kguest@esp32>  login AIman[25C[0Kguest@esp32>  login AIman [26C[0Kguest@esp32>  login AIman[25C[0Kguest@esp32>  login AIma[24C[0Kguest@esp32>  login AIm[23C[0Kguest@esp32>  login AI[22C[0Kguest@esp32>  login A[21C[0Kguest@esp32>  login Ai[22C[0Kguest@esp32>  login Aim[23C[0Kguest@esp32>  login Aima[24C[0Kguest@esp32>  login Aiman[25C[0Kguest@esp32>  login Aiman [26C[0Kguest@esp32>  login Aiman M[27C[0Kguest@esp32>  login Aiman Me[28C[0Kguest@esp32>  login Aiman Met[29C[0Kguest@esp32>  login Aiman Mete[30C[0Kguest@esp32>  login Aiman Meteo[31C[0Kguest@esp32>  login Aiman Meteor[32C[0Kguest@esp32>  login Aiman Meteora[33C[0Kguest@esp32>  login Aiman Meteora_[34C[0Kguest@esp32>  login Aiman Meteora_5[35C[0Kguest@esp32>  login Aiman Meteora_55[36C[0Kguest@esp32>  login Aiman Meteora_555[37C[0Kguest@esp32>  login Aiman Meteora_5555[38C[0Kguest@esp32>  login Aiman Meteora_55555[39C[0Kguest@esp32>  login Aiman Meteora_55555![40C[0Kguest@esp32>  login Aiman Meteora_55555![40C
+Login successful! Role: User
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  h[15C[0Kguest@esp32>  he[16C[0Kguest@esp32>  hel[17C[0Kguest@esp32>  help [<string>] [-v <0|1>][18C[0Kguest@esp32>  help[18C
+login 
+  Login: login <user> <pass>
+
+logout 
+  Logout active session
+
+chat 
+  Send message to AI: chat <msg>
+
+user_add 
+  Create user: user_add <user> <pass> <admin|user>
+
+user_upd 
+  Modify user: user_upd <user> <pass> <admin|user>
+
+user_del 
+  Delete user: user_del <user>
+
+user_list 
+  List users
+
+see_logs 
+  View audit traces
+
+toggle_relay 
+  Toggle pin state: toggle_relay <pin>
+
+pin_status 
+  Check pin voltage: pin_status <pin>
+
+help  [<string>] [-v <0|1>]
+  Print the summary of all registered commands if no arguments are given,
+  otherwise print summary of given command.
+      <string>  Name of command
+  -v, --verbose=<0|1>  If specified, list console commands with given verbose level
+
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  s[15C[0Kguest@esp32>  se[16C[0Kguest@esp32>  see[17C[0Kguest@esp32>  see_[18C[0Kguest@esp32>  see_l[19C[0Kguest@esp32>  see_lo[20C[0Kguest@esp32>  see_log[21C[0Kguest@esp32>  see_logs[22C[0Kguest@esp32>  see_logs[22C
+Access Denied: Admin privileges required to view logs.
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  u[15C[0Kguest@esp32>  us[16C[0Kguest@esp32>  use[17C[0Kguest@esp32>  user[18C[0Kguest@esp32>  user_[19C[0Kguest@esp32>  user_a[20C[0Kguest@esp32>  user_ad[21C[0Kguest@esp32>  user_add[22C[0Kguest@esp32>  user_add[22C
+Access Denied: Admin role required.
+Command returned non-zero error code: 0x1 (ERROR)
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logi[18C[0Kguest@esp32>  login[19C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login[19C[0Kguest@esp32>  logi[18C[0Kguest@esp32>  log[17C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logo[18C[0Kguest@esp32>  logou[19C[0Kguest@esp32>  logout[20C[0Kguest@esp32>  logout[20C
+Logged out user 'Aiman'.
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  }[15C[0Kguest@esp32>  }}[16C[0Kguest@esp32>  }}}[17C[0Kguest@esp32>  }}[16C[0Kguest@esp32>  }[15C[0Kguest@esp32>  [14C

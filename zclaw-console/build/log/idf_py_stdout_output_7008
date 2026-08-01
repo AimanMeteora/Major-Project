@@ -1,0 +1,173 @@
+8928
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efus�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=38b24h (232228) map[0m
+[0;32mI (129) esp_image: segment 1: paddr=00048b4c vaddr=3fc9b100 size=04b34h ( 19252) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0004d688 vaddr=40374000 size=02990h ( 10640) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=b9e94h (761492) map[0m
+[0;32mI (275) esp_image: segment 4: paddr=00109ebc vaddr=40376990 size=14734h ( 83764) load[0m
+[0;32mI (293) esp_image: segment 5: paddr=0011e5f8 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (303) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (303) boot: Disabling RNG early entropy source...[0m
+[0;32mI (313) cpu_start: Multicore app[0m
+[0;32mI (322) cpu_start: Pro cpu start user code[0m
+[0;32mI (322) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (322) app_init: Application information:[0m
+[0;32mI (322) app_init: Project name:     zclaw-console[0m
+[0;32mI (327) app_init: App version:      v5.4.1[0m
+[0;32mI (331) app_init: Compile time:     Jul 24 2026 22:16:00[0m
+[0;32mI (336) app_init: ELF file SHA256:  20426ef52...[0m
+[0;32mI (340) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (344) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (348) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (352) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (355) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (362) heap_init: At 3FCB2518 len 000371F8 (220 KiB): RAM[0m
+[0;32mI (367) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (372) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (377) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (384) spi_flash: detected chip: gd[0m
+[0;32mI (386) spi_flash: flash io: dio[0m
+[0;33mW (389) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (401) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (417) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (424) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (454) pp: pp rom version: e7ae62f[0m
+[0;32mI (454) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (464) wifi:wifi driver task: 3fcbc4ec, prio:23, stack:6656, core=0[0m
+[0;32mI (474) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (474) wifi:wifi certification version: v7.0[0m
+[0;32mI (474) wifi:config NVS flash: enabled[0m
+[0;32mI (474) wifi:config nano formatting: disabled[0m
+[0;32mI (474) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (484) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (484) wifi:Init management short buffer num: 32[0m
+[0;32mI (494) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (494) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (494) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (504) wifi:Init static rx buffer num: 10[0m
+[0;32mI (504) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (514) wifi_init: rx ba win: 6[0m
+[0;32mI (514) wifi_init: accept mbox: 6[0m
+[0;32mI (514) wifi_init: tcpip mbox: 32[0m
+[0;32mI (514) wifi_init: udp mbox: 6[0m
+[0;32mI (524) wifi_init: tcp mbox: 6[0m
+[0;32mI (524) wifi_init: tcp tx win: 5760[0m
+[0;32mI (524) wifi_init: tcp rx win: 5760[0m
+[0;32mI (534) wifi_init: tcp mss: 1440[0m
+[0;32mI (534) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (534) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (544) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (554) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (584) wifi:mode : sta (f4:12:fa:43:66:bc)[0m
+[0;32mI (584) wifi:enable tsf[0m
+[0;32mI (594) auth_console: Waiting for Wi-Fi connection...[0m
+[0;32mI (604) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (604) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1274) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2284) wifi:state: assoc -> init (0x400)[0m
+[0;32mI (2294) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2294) auth_console: Reconnecting to Wi-Fi...[0m
+[0;32mI (4704) auth_console: Reconnecting to Wi-Fi...[0m
+[0;32mI (4704) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4714) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5394) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (5444) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (5474) wifi:connected with AndroidAP, aid = 4, channel 6, BW20, bssid = 86:6f:46:6a:7b:62[0m
+[0;32mI (5474) wifi:security: WPA3-SAE, phy: bgn, rssi: -61[0m
+[0;32mI (5484) wifi:pm start, type: 1[0m
+
+[0;32mI (5484) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (5494) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (5504) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (5504) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5554) wifi:<ba-add>idx:0 (ifx:0, 86:6f:46:6a:7b:62), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6564) esp_netif_handlers: sta ip: 10.241.108.101, mask: 255.255.255.0, gw: 10.241.108.241[0m
+[0;32mI (6564) auth_console: Connected with IP: 10.241.108.101[0m
+[0;32mI (6564) auth_console: Wi-Fi connected successfully.[0m
+[0;32mI (6564) NVS_SEED: API key already configured in NVS.[0m
+[0;32mI (6574) memory: NVS initialized[0m
+[0;32mI (6574) memory: Retrieved: llm_backend = ollama[0m
+[0;32mI (6584) memory: Retrieved: api_key = <redacted>[0m
+[0;32mI (6584) memory: Retrieved: llm_model = qwen2.5:0.5b[0m
+[0;32mI (6584) memory: Retrieved: llm_api_url = http://10.57.86.4:11434/v1/chat/completions[0m
+[0;32mI (6594) llm: Backend: Ollama, Model: qwen2.5:0.5b[0m
+[0;32mI (6604) llm: Using custom LLM API endpoint override[0m
+[0;32mI (6604) agent: Agent task started[0m
+[0;32mI (6604) agent: Agent started[0m
+[0;32mI (6614) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6614) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6624) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6634) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6644) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6654) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6664) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6664) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6674) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6684) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6694) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[5n
+=======================================================
+ Welcome to Secure ESP32 Console + zclaw AI Runtime
+ System initialized successfully.
+=======================================================
+
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+[6n I (6784) main_task: Returned from app_main()
+[999C [6n [149Dguest@esp32>  [0Kguest@esp32>  l[15C[0Kguest@esp32>  lo[16C[0Kguest@esp32>  log[17C[0Kguest@esp32>  logi[18C[0Kguest@esp32>  login[19C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login A[21C[0Kguest@esp32>  login [20C[0Kguest@esp32>  login a[21C[0Kguest@esp32>  login ad[22C[0Kguest@esp32>  login adm[23C[0Kguest@esp32>  login admi[24C[0Kguest@esp32>  login admin[25C[0Kguest@esp32>  login admin [26C[0Kguest@esp32>  login admin A[27C[0Kguest@esp32>  login admin Ad[28C[0Kguest@esp32>  login admin Adm[29C[0Kguest@esp32>  login admin Admi[30C[0Kguest@esp32>  login admin Admin[31C[0Kguest@esp32>  login admin Admin_[32C[0Kguest@esp32>  login admin Admin_1[33C[0Kguest@esp32>  login admin Admin_12[34C[0Kguest@esp32>  login admin Admin_123[35C[0Kguest@esp32>  login admin Admin_1234[36C[0Kguest@esp32>  login admin Admin_12345[37C[0Kguest@esp32>  login admin Admin_12345![38C[0Kguest@esp32>  login admin Admin_12345![38C
+Login successful! Role: Admin
+[6n [999C [6n [149Dguest@esp32>  [0Kguest@esp32>  c[15C[0Kguest@esp32>  ch[16C[0Kguest@esp32>  cha[17C[0Kguest@esp32>  chat[18C[0Kguest@esp32>  chat [19C[0Kguest@esp32>  chat h[20C[0Kguest@esp32>  chat hi[21C[0Kguest@esp32>  chat hi[21C
+[0;32mI (82894) agent: Processing: hi[0m
+Message sent to zclaw agent...
+[6n I (82914) agent: Request: 7237 bytes
+[0;32mI (82914) memory: Stored: rl_day = 0[0m
+[0;32mI (82914) memory: Stored: rl_year = 70[0m
+[0;32mI (82924) memory: Stored: rl_daily = 0[0m
+[0;32mI (82924) ratelimit: Daily rate limit reset[0m
+[0;32mI (82924) llm: Sending request to Ollama...[0m
+[999C [6n [149Dguest@esp32>  E (101174) esp-tls: [sock=54] delayed connect error: Software caused connection abort
+[1;31mE (101174) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (101174) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (101184) llm: LLM request failed: err=ESP_ERR_HTTP_CONNECT(28674) status=0 errno=113(Software caused connection abort) transport=tcp[0m
+[0;33mW (101194) llm: NETDIAG op=llm_request ok=0 status=0 err=ESP_ERR_HTTP_CONNECT(28674) errno=0(n/a) transport=tcp dur_ms=18275 resp_bytes=0 truncated=0 ev_conn=0 ev_hsent=0 ev_hdr=0 ev_data=0 ev_fin=0 ev_disc=0 ev_err=1 ev_errno=0(n/a) hdr_count=0 data_ev=0 data_bytes=0 t_conn_ms=-1 t_hsent_ms=-1 t_hdr_ms=-1 t_data_ms=-1 t_fin_ms=-1 t_disc_ms=-1 tls_diag=0 tls_last_err=0 tls_stack_err=0 tls_cert_flags=0 heap_free=160536 heap_delta=-2696 heap_min=133732 heap_largest=73728 rssi=-31 rssi_ok=1[0m
+[0;33mW (101234) agent: LLM request failed (attempt 1/3), retrying in 2000ms (budget 18314/45000ms)[0m
+[0;32mI (103244) llm: Sending request to Ollama...[0m
+[1;31mE (121744) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[1;31mE (121744) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (121744) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (121754) llm: LLM request failed: err=ESP_ERR_HTTP_CONNECT(28674) status=0 errno=113(Software caused connection abort) transport=tcp[0m
+[0;33mW (121764) llm: NETDIAG op=llm_request ok=0 status=0 err=ESP_ERR_HTTP_CONNECT(28674) errno=0(n/a) transport=tcp dur_ms=18528 resp_bytes=0 truncated=0 ev_conn=0 ev_hsent=0 ev_hdr=0 ev_data=0 ev_fin=0 ev_disc=0 ev_err=1 ev_errno=0(n/a) hdr_count=0 data_ev=0 data_bytes=0 t_conn_ms=-1 t_hsent_ms=-1 t_hdr_ms=-1 t_data_ms=-1 t_fin_ms=-1 t_disc_ms=-1 tls_diag=0 tls_last_err=0 tls_stack_err=0 tls_cert_flags=0 heap_free=160532 heap_delta=-2312 heap_min=133732 heap_largest=73728 rssi=-30 rssi_ok=1[0m
+[0;33mW (121804) agent: LLM request failed (attempt 2/3), retrying in 4000ms (budget 38884/45000ms)[0m
+[0;32mI (125814) llm: Sending request to Ollama...[0m

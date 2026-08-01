@@ -1,0 +1,49 @@
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c: In function 'register_commands':
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:274:17: warning: missing terminating " character
+  274 |         .help = "Send a message to the
+      |                 ^
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:274:17: error: missing terminating " character
+  274 |         .help = "Send a message to the
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:274:9: error: expected expression at end of input
+  274 |         .help = "Send a message to the
+      |         ^
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:274:9: error: expected declaration or statement at end of input
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:272:23: warning: unused variable 'chat_cmd' [-Wunused-variable]
+  272 |     esp_console_cmd_t chat_cmd = {
+      |                       ^~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c: At top level:
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:257:13: warning: 'register_commands' defined but not used [-Wunused-function]
+  257 | static void register_commands(void) {
+      |             ^~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:223:12: warning: 'do_chat' defined but not used [-Wunused-function]
+  223 | static int do_chat(int argc, char **argv) {
+      |            ^~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:164:13: warning: 'init_user_db' defined but not used [-Wunused-function]
+  164 | static void init_user_db(void) {
+      |             ^~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:142:13: warning: 'inactivity_watchdog_task' defined but not used [-Wunused-function]
+  142 | static void inactivity_watchdog_task(void *pvParameters) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:131:13: warning: 'zclaw_response_task' defined but not used [-Wunused-function]
+  131 | static void zclaw_response_task(void *pvParameters) {
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:111:13: warning: 'inject_dummy_api_key_if_missing' defined but not used [-Wunused-function]
+  111 | static void inject_dummy_api_key_if_missing(void) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:80:25: error: 'ALL_GPIO_PINS' defined but not used [-Werror=unused-const-variable=]
+   80 | static const gpio_num_t ALL_GPIO_PINS[] = {
+      |                         ^~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:75:22: warning: 's_telegram_output_queue' defined but not used [-Wunused-variable]
+   75 | static QueueHandle_t s_telegram_output_queue = NULL;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:70:21: warning: 'logout_task_handle' defined but not used [-Wunused-variable]
+   70 | static TaskHandle_t logout_task_handle = NULL;
+      |                     ^~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:29:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   29 | static const char *TAG = "auth_console";
+      |                    ^~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7299: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2
