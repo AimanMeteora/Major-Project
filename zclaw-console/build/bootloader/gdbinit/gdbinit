@@ -1,2 +1,0 @@
-source /home/meteora/esp/esp-idf/zclaw-console/build/bootloader/gdbinit/symbols
-source /home/meteora/esp/esp-idf/zclaw-console/build/bootloader/gdbinit/connect
