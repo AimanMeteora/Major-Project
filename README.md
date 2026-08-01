@@ -70,3 +70,7 @@ These are worth addressing before treating this as production-grade:
 - **Rate limiting is global, not per-user** — a single `failed_attempts` counter locks out the whole console rather than tracking attempts per username or per source.
 - **Audit log is volatile** — the audit trail (`audit_logs`) is not persisted to NVS, so history resets on reboot.
 - **API key seeding** — `inject_dummy_api_key_if_missing()` writes a placeholder API key to NVS if none is set; ensure this is replaced with a real key before use in any non-test environment.
+
+## Project Contributors
+- **Aiman Yusuf** -  https://github.com/AimanMeteora
+- **Jeannie Pang** - 
