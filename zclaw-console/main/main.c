@@ -37,8 +37,8 @@ static const char *TAG = "auth_console";
 /* -------------------------------------------------------------------------- */
 /* Wi-Fi Credentials Configuration                                            */
 /* -------------------------------------------------------------------------- */
-#define WIFI_SSID      "AndroidAP"
-#define WIFI_PASS      "!ButtertheBreadwithButter570"
+#define WIFI_SSID      "WiFi SSID"
+#define WIFI_PASS      "WiFi Password"
 #define WIFI_CONNECTED_BIT BIT0
 
 static EventGroupHandle_t s_wifi_event_group;
