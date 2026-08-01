@@ -1,0 +1,17 @@
+CMake Deprecation Warning at /home/meteora/esp/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:21 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:31:10: fatal error: llm.h: No such file or directory
+   31 | #include "llm.h"
+      |          ^~~~~~~
+compilation terminated.
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7263: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:136: all] Error 2

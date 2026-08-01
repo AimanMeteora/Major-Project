@@ -1,0 +1,17 @@
+CMake Deprecation Warning at /home/meteora/esp/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:21 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:65:9: warning: "NVS_NAMESPACE" redefined
+   65 | #define NVS_NAMESPACE "storage"
+      |         ^~~~~~~~~~~~~
+In file included from /home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/llm.h:4,
+                 from /home/meteora/esp/esp-idf/zclaw-console/main/main.c:31:
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/config.h:117:9: note: this is the location of the previous definition
+  117 | #define NVS_NAMESPACE           "zclaw"
+      |         ^~~~~~~~~~~~~

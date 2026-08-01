@@ -1,0 +1,25 @@
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:127:1: error: expected identifier or '(' before '{' token
+  127 | {
+      | ^
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:114:13: warning: 'print_provisioning_help' defined but not used [-Wunused-function]
+  114 | static void print_provisioning_help(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:100:13: warning: 'device_is_configured' defined but not used [-Wunused-function]
+  100 | static bool device_is_configured(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:67:13: warning: 'check_factory_reset' defined but not used [-Wunused-function]
+   67 | static bool check_factory_reset(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:36:13: warning: 'clear_boot_count' defined but not used [-Wunused-function]
+   36 | static void clear_boot_count(void *arg)
+      |             ^~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:29:13: warning: 'fail_fast_startup' defined but not used [-Wunused-function]
+   29 | static void fail_fast_startup(const char *component, esp_err_t err)
+      |             ^~~~~~~~~~~~~~~~~
+/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/main.c:27:13: warning: 's_safe_mode' defined but not used [-Wunused-variable]
+   27 | static bool s_safe_mode = false;
+      |             ^~~~~~~~~~~
+make[2]: *** [esp-idf/zclaw/CMakeFiles/__idf_zclaw.dir/build.make:275: esp-idf/zclaw/CMakeFiles/__idf_zclaw.dir/main/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:7264: esp-idf/zclaw/CMakeFiles/__idf_zclaw.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:136: all] Error 2

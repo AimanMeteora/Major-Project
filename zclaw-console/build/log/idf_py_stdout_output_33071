@@ -1,0 +1,187 @@
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot:�ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=39534h (234804) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=0004955c vaddr=3fc9b100 size=04b34h ( 19252) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0004e098 vaddr=40374000 size=01f80h (  8064) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=bab80h (764800) map[0m
+[0;32mI (276) esp_image: segment 4: paddr=0010aba8 vaddr=40375f80 size=15144h ( 86340) load[0m
+[0;32mI (295) egment 5: paddr=0011fcf4 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (315) cpu_start: Multicore app[0m
+[0;32mI (324) cpu_start: Pro cpu start user code[0m
+[0;32mI (324) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     zclaw-console[0m
+[0;32mI (328) app_init: App version:      v5.4.1[0m
+[0;32mI (332) app_init: Compile time:     Jul 24 2026 22:16:00[0m
+[0;32mI (337) app_init: ELF file SHA256:  a91fb217d...[0m
+[0;32mI (341) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (345) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (349) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (353) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (357) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (363) heap_init: At 3FCB1F08 len 00037808 (222 KiB): RAM[0m
+[0;32mI (368) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (374) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (379) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (385) spi_flash: detected chip: gd[0m
+[0;32mI (387) spi_flash: flash io: dio[0m
+[0;33mW (390) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (403) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (412) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (419) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (426) main_task: Started on CPU0[0m
+[0;32mI (436) main_task: Calling app_main()[0m
+[0;32mI (466) pp: pp rom version: e7ae62f[0m
+[0;32mI (466) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (476) wifi:wifi driver task: 3fcbbe58, prio:23, stack:6656, core=0[0m
+[0;32mI (486) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (486) wifi:wifi certification version: v7.0[0m
+[0;32mI (486) wifi:config NVS flash: enabled[0m
+[0;32mI (486) wifi:config nano formatting: disabled[0m
+[0;32mI (486) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (496) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (496) wifi:Init management short buffer num: 32[0m
+[0;32mI (496) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (506) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (506) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (516) wifi:Init static rx buffer num: 10[0m
+[0;32mI (516) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (516) wifi_init: rx ba win: 6[0m
+[0;32mI (526) wifi_init: accept mbox: 6[0m
+[0;32mI (526) wifi_init: tcpip mbox: 32[0m
+[0;32mI (526) wifi_init: udp mbox: 6[0m
+[0;32mI (536) wifi_init: tcp mbox: 6[0m
+[0;32mI (536) wifi_init: tcp tx win: 5760[0m
+[0;32mI (536) wifi_init: tcp rx win: 5760[0m
+[0;32mI (536) wifi_init: tcp mss: 1440[0m
+[0;32mI (546) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (546) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (556) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (556) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (596) wifi:mode : sta (f4:12:fa:43:66:bc)[0m
+[0;32mI (596) wifi:enable tsf[0m
+[0;32mI (606) auth_console: Waiting for Wi-Fi connection...[0m
+[0;32mI (616) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (616) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1276) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1356) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1396) wifi:connected with AndroidAP, aid = 10, channel 1, BW20, bssid = 86:6f:46:6a:7b:62[0m
+[0;32mI (1396) wifi:security: WPA3-SAE, phy: bgn, rssi: -35[0m
+[0;32mI (1396) wifi:pm start, type: 1[0m
+
+[0;32mI (1396) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1406) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1416) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1426) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1456) wifi:<ba-add>idx:0 (ifx:0, 86:6f:46:6a:7b:62), tid:0, ssn:1, winSize:64[0m
+[0;32mI (2466) esp_netif_handlers: sta ip: 10.233.192.101, mask: 255.255.255.0, gw: 10.233.192.176[0m
+[0;32mI (2466) auth_console: Connected with IP: 10.233.192.101[0m
+[0;32mI (2466) auth_console: Wi-Fi connected successfully.[0m
+[0;32mI (2466) memory: NVS initialized[0m
+[0;32mI (2476) memory: Retrieved: llm_backend = ollama[0m
+[0;32mI (2476) memory: Retrieved: api_key = <redacted>[0m
+[0;32mI (2486) memory: Retrieved: llm_model = qwen2.5:0.5b[0m
+[0;32mI (2486) memory: Retrieved: llm_api_url = http://10.233.192.4:11434/v1/chat/completions[0m
+[0;32mI (2496) llm: Backend: Ollama, Model: qwen2.5:0.5b[0m
+[0;32mI (2496) llm: Using custom LLM API endpoint override[0m
+[0;32mI (2506) agent: Agent task started[0m
+[0;32mI (2506) agent: Agent started[0m
+[0;32mI (2506) gpio: GPIO[0]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2516) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2526) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2536) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2546) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2546) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2556) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2566) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2576) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2586) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2596) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[5n
+=======================================================
+ Welcome to Secure ESP32 Console + zcuntime
+ System initialized succsfully.
+ Usage: login <Username> <Password>.
+=======================================================
+
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+[6n I (2686) main_task: Returned from app_main()
+[999C [6n [149Desp32@esp32>  [0Kesp32@esp32>  l[15C[0Kesp32@esp32>  lo[16C[0Kesp32@esp32>  log[17C[0Kesp32@esp32>  logi[18C[0Kesp32@esp32>  login[19C[0Kesp32@esp32>  login [20C[0Kesp32@esp32>  login a[21C[0Kesp32@esp32>  login ad[22C[0Kesp32@esp32>  login adm[23C[0Kesp32@esp32>  login admi[24C[0Kesp32@esp32>  login admin[25C[0Kesp32@esp32>  login admin [26C[0Kesp32@esp32>  login admin A[27C[0Kesp32@esp32>  login admin Ad[28C[0Kesp32@esp32>  login admin Adm[29C[0Kesp32@esp32>  login admin Admi[30C[0Kesp32@esp32>  login admin Admin[31C[0Kesp32@esp32>  login admin Admin_[32C[0Kesp32@esp32>  login admin Admin_1[33C[0Kesp32@esp32>  login admin Admin_12[34C[0Kesp32@esp32>  login admin Admin_123[35C[0Kesp32@esp32>  login admin Admin_1234[36C[0Kesp32@esp32>  login admin Admin_12345[37C[0Kesp32@esp32>  login admin Admin_12345![38C[0Kesp32@esp32>  login admin Admin_12345![38C
+Login successful! Role: Admin
+[6n [999C [6n [149Desp32@esp32>  [0Kesp32@esp32>  c[15C[0Kesp32@esp32>  ch[16C[0Kesp32@esp32>  cha[17C[0Kesp32@esp32>  chat[18C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat h[20C[0Kesp32@esp32>  chat hi[21C[0Kesp32@esp32>  chat hi[21C
+[0;32mI (17526) agent: Processing: hi[0m
+Message sent to zclaw agent...
+[6n I (17546) agent: Request: 7237 bytes
+[0;32mI (17546) memory: Stored: rl_day = 0[0m
+[0;32mI (17546) memory: Stored: rl_year = 70[0m
+[0;32mI (17556) memory: Stored: rl_daily = 0[0m
+[0;32mI (17556) ratelimit: Daily rate limit reset[0m
+[0;32mI (17556) llm: Sending request to Ollama...[0m
+[999C [6n [149Desp32@esp32>  W (37796) HTTP_CLIENT: Connection timed out before data was ready!
+[1;31mE (37796) llm: LLM request failed: err=ESP_ERR_HTTP_EAGAIN(28679) status=-1 errno=0(n/a) transport=tcp[0m
+[0;33mW (37806) llm: NETDIAG op=llm_request ok=0 status=-1 err=ESP_ERR_HTTP_EAGAIN(28679) errno=0(n/a) transport=tcp dur_ms=20251 resp_bytes=0 truncated=0 ev_conn=1 ev_hsent=1 ev_hdr=0 ev_data=0 ev_fin=0 ev_disc=0 ev_err=0 ev_errno=0(n/a) hdr_count=0 data_ev=0 data_bytes=0 t_conn_ms=37 t_hsent_ms=39 t_hdr_ms=-1 t_data_ms=-1 t_fin_ms=-1 t_disc_ms=-1 tls_diag=0 tls_last_err=0 tls_stack_err=0 tls_cert_flags=0 heap_free=155344 heap_delta=-3160 heap_min=128992 heap_largest=69632 rssi=-39 rssi_ok=1[0m
+[0;33mW (37846) agent: LLM request failed (attempt 1/3), retrying in 2000ms (budget 20292/45000ms)[0m
+[0;32mI (39846) llm: Sending request to Ollama...[0m
+[0;32mI (44206) llm: Response: 200, 325 bytes[0m
+[0;32mI (44206) llm: NETDIAG op=llm_request ok=1 status=200 err=ESP_OK(0) errno=0(n/a) transport=tcp dur_ms=4366 resp_bytes=325 truncated=0 ev_conn=1 ev_hsent=1 ev_hdr=1 ev_data=1 ev_fin=1 ev_disc=0 ev_err=0 ev_errno=0(n/a) hdr_count=3 data_ev=1 data_bytes=325 t_conn_ms=19 t_hsent_ms=21 t_hdr_ms=4363 t_data_ms=4364 t_fin_ms=4364 t_disc_ms=-1 tls_diag=0 tls_last_err=0 tls_stack_err=0 tls_cert_flags=0 heap_free=155284 heap_delta=-2836 heap_min=128992 heap_largest=69632 rssi=-38 rssi_ok=1[0m
+[0;32mI (44256) memory: Stored: rl_daily = 1[0m
+
+[zclaw]: Hello! How can I assist you today?
+
+[0;32mI (44256) agent: METRIC request outcome=success total_ms=26723 llm_ms=24698 tool_ms=0 rounds=1 llm_calls=2 tool_calls=0[0m
+guest@esp32> [0Kesp32@esp32>  c[15C[0Kesp32@esp32>  ch[16C[0Kesp32@esp32>  cha[17C[0Kesp32@esp32>  chat[18C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat C[20C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat I[20C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat p[20C[0Kesp32@esp32>  chat pI[21C[0Kesp32@esp32>  chat pIN[22C[0Kesp32@esp32>  chat pI[21C[0Kesp32@esp32>  chat p[20C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat p[20C[0Kesp32@esp32>  chat pI[21C[0Kesp32@esp32>  chat pIN[22C[0Kesp32@esp32>  chat pIN [23C[0Kesp32@esp32>  chat pIN[22C[0Kesp32@esp32>  chat pI[21C[0Kesp32@esp32>  chat p[20C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat P[20C[0Kesp32@esp32>  chat Pi[21C[0Kesp32@esp32>  chat Pin[22C[0Kesp32@esp32>  chat Pin [23C[0Kesp32@esp32>  chat Pin 5[24C[0Kesp32@esp32>  chat Pin 5 [25C[0Kesp32@esp32>  chat Pin 5[24C[0Kesp32@esp32>  chat Pin [23C[0Kesp32@esp32>  chat Pin [23C[0Kesp32@esp32>  chat Pin[22C[0Kesp32@esp32>  chat Pi[21C[0Kesp32@esp32>  chat P[20C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat G[20C[0Kesp32@esp32>  chat Gp[21C[0Kesp32@esp32>  chat Gpi[22C[0Kesp32@esp32>  chat Gpio[23C[0Kesp32@esp32>  chat Gpi[22C[0Kesp32@esp32>  chat Gp[21C[0Kesp32@esp32>  chat G[20C[0Kesp32@esp32>  chat [19C[0Kesp32@esp32>  chat G[20C[0Kesp32@esp32>  chat GP[21C[0Kesp32@esp32>  chat GPI[22C[0Kesp32@esp32>  chat GPIO[23C[0Kesp32@esp32>  chat GPIO [24C[0Kesp32@esp32>  chat GPIO P[25C[0Kesp32@esp32>  chat GPIO Pi[26C[0Kesp32@esp32>  chat GPIO Pin[27C[0Kesp32@esp32>  chat GPIO Pin [28C[0Kesp32@esp32>  chat GPIO Pin 5[29C[0Kesp32@esp32>  chat GPIO Pin 5 [30C[0Kesp32@esp32>  chat GPIO Pin 5 s[31C[0Kesp32@esp32>  chat GPIO Pin 5 st[32C[0Kesp32@esp32>  chat GPIO Pin 5 sta[33C[0Kesp32@esp32>  chat GPIO Pin 5 stat[34C[0Kesp32@esp32>  chat GPIO Pin 5 statu[35C[0Kesp32@esp32>  chat GPIO Pin 5 status[36C[0Kesp32@esp32>  chat GPIO Pin 5 status[36C
+[0;32mI (75696) agent: Processing: GPIO Pin 5 status[0m
+Message sent to zclaw agent...
+[6n I (75706) agent: Request: 7351 bytes
+[0;32mI (75716) llm: Sending request to Ollama...[0m
+[999C [6n [149Desp32@esp32>  I (91926) llm: Response: 200, 425 bytes
+[0;32mI (91926) llm: NETDIAG op=llm_request ok=1 status=200 err=ESP_OK(0) errno=0(n/a) transport=tcp dur_ms=16212 resp_bytes=425 truncated=0 ev_conn=1 ev_hsent=1 ev_hdr=1 ev_data=1 ev_fin=1 ev_disc=0 ev_err=0 ev_errno=0(n/a) hdr_count=3 data_ev=2 data_bytes=425 t_conn_ms=28 t_hsent_ms=30 t_hdr_ms=16209 t_data_ms=16210 t_fin_ms=16211 t_disc_ms=-1 tls_diag=0 tls_last_err=0 tls_stack_err=0 tls_cert_flags=0 heap_free=154928 heap_delta=-2828 heap_min=127952 heap_largest=65536 rssi=-38 rssi_ok=1[0m
+[0;32mI (91976) memory: Stored: rl_daily = 2[0m
+[0;32mI (91976) agent: Tool call: gpio_read_all (round 1)[0m
+[0;32mI (91976) tools: Exec: gpio_read_all[0m
+[0;32mI (91976) agent: Tool result: GPIO states: 2=LOW, 3=LOW, 4=LOW, 5=LOW, 6=LOW, 7=LOW, 8=LOW, 9=LOW, 10=LOW[0m
+[0;32mI (92006) agent: Request: 7640 bytes[0m
+[0;32mI (92006) llm: Sending request to Ollama...[0m
+[0;32mI (104006) llm: Response: 200, 506 bytes[0m
+[0;32mI (104006) llm: NETDIAG op=llm_request ok=1 status=200 err=ESP_OK(0) errno=0(n/a) transport=tcp dur_ms=12002 resp_bytes=506 truncated=0 ev_conn=1 ev_hsent=1 ev_hdr=1 ev_data=1 ev_fin=1 ev_disc=0 ev_err=0 ev_errno=0(n/a) hdr_count=3 data_ev=2 data_bytes=506 t_conn_ms=120 t_hsent_ms=122 t_hdr_ms=11999 t_data_ms=11999 t_fin_ms=12000 t_disc_ms=-1 tls_diag=0 tls_last_err=0 tls_stack_err=0 tls_cert_flags=0 heap_free=154420 heap_delta=-2788 heap_min=126696 heap_largest=65536 rssi=-34 rssi_ok=1[0m
+[0;32mI (104056) memory: Stored: rl_daily = 3[0m
+
+[zclaw]: The GPIO state of pin 5 on the device is LOW. This indicates that no external signals are currently affecting it in this specific application. Ensure you handle external events properly to avoid unexpected behavior.
+
+[0;32mI (104056) agent: METRIC request outcome=success total_ms=28358 llm_ms=28294 tool_ms=0 rounds=2 llm_calls=2 tool_calls=1[0m
+guest@esp32> 
+
+[Security Notice] Session timed out due to inactivity. Logged out user 'admin'.
+guest@esp32> 

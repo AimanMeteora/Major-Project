@@ -1,0 +1,178 @@
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: �ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 24 2026 22:14:56[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.1[0m
+[0;32mI (30) boot: efuse block revision: v1.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=3a1c4h (2380I (130) esp_image: segment 1: paddr=0004a1ec vaddr=3fc9b200 size=04af4h ( 19188) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=0004ece8 vaddr=40374000 size=01330h (  4912) load[0m
+[0;32mI (136) esp_image:egment 3: paddr=00050020 vaddr=42000020 size=ba360h (762720) map[0m
+[0;32mI (276) esp_image: segment 4: paddr=0010a388 vaddr=40375330 size=15e7ch ( 89724) load[0m
+[0;32mI (296) esegment 5: paddr=0012020c vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (316) cpu_start: Multicore app[0m
+[0;32mI (325) cpu_start: Pro cpu start user code[0m
+[0;32mI (325) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (325) app_init: Application information:[0m
+[0;32mI (325) app_init: Project name:     zclaw-console[0m
+[0;32mI (329) app_init: App version:      v5.4.1[0m
+[0;32mI (333) app_init: Compile time:     Jul 24 2026 22:16:00[0m
+[0;32mI (338) app_init: ELF file SHA256:  8001367f7...[0m
+[0;32mI (342) app_init: ESP-IDF:          v5.4.1[0m
+[0;32mI (346) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (350) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (354) efuse_init: Chip rev:         v0.1[0m
+[0;32mI (358) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (364) heap_init: At 3FCB3B08 len 00035C08 (215 KiB): RAM[0m
+[0;32mI (369) heap_init: At 3FCE970005724 (21 KiB): RAM[0m
+[0;32mI (374) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (380) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (386) spi_flash: detected chip: gd[0m
+[0;32mI (388) spi_flash: flash io: dio[0m
+[0;33mW (391) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (404) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (413) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (420) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (427) main_task: Started on CPU0[0m
+[0;32mI (437) main_task: Calling app_main()[0m
+[0;32mI (437) main: [0m
+[0;32mI (437) main: ========================================[0m
+[0;32mI (437) main:   zclaw vdev[0m
+[0;32mI (437) main:   AI Agent on ESP32[0m
+[0;32mI (447) main: ========================================[0m
+[0;32mI (447) main: [0m
+[0;32mI (477) memory: NVS initialized[0m
+[0;32mI (477) ota: Running from: factory (vdev)[0m
+[0;32mI (477) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (477) memory: Retrieved: boot_count = 1[0m
+[0;32mI (487) memory: Stored: boot_count = 2[0m
+[0;32mI (487) memory: Retrieved: wifi_ssid = AndroidAP[0m
+[0;32mI (487) memory: Retrieved: llm_backend = ollama[0m
+[0;32mI (497) memory: Retrieved: api_key = <redacted>[0m
+[0;32mI (497) memory: Retrieved: llm_model = qwen2.5:0.5b[0m
+[0;32mI (507) memory: Retrievedi_url = http://10.57.86.4:11434/v1/chat/completions[0m
+[0;32mI (507) llm: Backend: Ollama, Model: qwen2.5:0.5b[0m
+[0;32mI (517) llm: Using custom LLM API endpoint override[0m
+[0;32mI (517) ratelimit: Rate limiter initialized: 0 requests today[0m
+[0;32mI (527) memory: Retrieved: tg_token = <redacted>[0m
+[0;32mI (527) telegram: Loaded bot ID: 8811299297 (safe identifier; token remains secret)[0m
+[0;32mI (537) memory: Retrieved: tg_chat_ids = 6865481363[0m
+[0;32mI (537) telegram: Loaded 1 authorized chat IDs (primary: 6865481363)[0m
+[0;32mI (547) telegram: Telegram initialized[0m
+[0;32mI (547) user_tools: No saved user tools[0m
+[0;32mI (557) tools: Registered 28 built-in tools, 0 user tools[0m
+[0;32mI (557) tools:   gpio_write[0m
+[0;32mI (557) tools:   gpio_rea7) tools:   gpio_read_all[0m
+[0;32mI (567) tools:   delay[0m
+[0;32mI (567) toolss:   i2c_write[0m
+[0;32mI (577) tools:   i2c_read[0m
+[0;32mI (577) tools:   i2c_write_read[0m
+[0;32mI (577) tools:   dht_read[0m
+[0;32mI (577) tools:   memory_set[0m
+[0;32mI (587) tools:   memory_get[0m
+[0;32mI (587) tools:   memory_list[0m
+[0;32mI (587) tools:   memory_delete[0m
+[0;32mI (587) tools:   set_persona[0m
+[0;32mI (597) tools:   get_persona[0m
+[0;32mI (597) tools:   reset_persona[0m
+[0;32mI (597) tools:   cron_set[0m
+[0;32mI (597) tools:   cron_list[0m
+[0;32mI (607) tools:   cron_delete[0m
+[0;32mI (607) tools:   get_time[0m
+[0;32mI (607) tools:   set_timezone[0m
+[0;32mI (607) tools:   get_timezone[0m
+[0;32mI (617) tools:   get_version[0m
+[0;32mI (617) tools:   get_health[0m
+[0;32mI (617) too��I (627) channel: UART0 channel initialized[0m
+[0;32mI (627) channel: Channel tasks started[0m
+[0;32mI (637) agen agent: Agent started[0m
+[0;32mI (637) memory: Retrieved: wifi_ssid = Aned: wifi_pass = <redacted>[0m
+[0;32mI (647) pp: pp rom version: e7ae62f[0m
+[0;32mI (647) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (657) wifi:wifi driver task: 3fcca248, prio:23, stack:6656, core=0[0m
+[0;32mI (667) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (667) wifi:wifi certification version: v7.0[0m
+[0;32mI (667) wifi:config NVS flash: enabled[0m
+[0;32mI (667) wifi:config nano formatting: disabled[0m
+[0;32mI (667) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (677) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (677) wifi:Init management short buffer num: 32[0m
+[0;32mI (687) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (687) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (697) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (697) wifi:Init static rx buffer num: 10[0m
+[0;32mI (697) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (707) wifi_init: rx ba win: 6[0m
+[0;32mI (707) wifi_init: accept mbox: 6[0m
+[0;32mI (707) wifi_init: tcpip mbox: 32[0m
+[0;32mI (717) wifi_init: udp mbox: 6[0m
+[0;32mI (717) wifi_init: tcp mbox: 6[0m
+[0;32mI (717) wifi_init: tcp tx win: 5760[0m
+[0;32mI (727) wifi_init: tcp rx win: 5760[0m
+[0;32mI (727) wifi_init: tcp mss: 1440[0m
+[0;32mI (727) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (737) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (737) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (777) wifi:mode : sta (f4:12:fa:43:66:bc)[0m
+[0;32mI (777) wifi:enable tsf[0m
+[0;32mI (777) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (777) local_admin: WiFi STA started[0m
+[0;32mI (777) local_admin: Connecting to AndroidAP...[0m
+[0;32mI (787) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (787) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1477) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1527) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1557) wifi:connected with AndroidAP, aid = 6, channel 1, BW20, bssid = 86:6f:46:6a:7b:62[0m
+[0;32mI (1557) wifi:security: WPA3-SAE, phy: bgn, rssi: -31[0m
+[0;32mI (1557) wifi:pm start, type: 0[0m
+
+[0;32mI (1557) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1567) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1597) wifi:<ba-add>idx:0 (ifx:0, 86:6f:46:6a:7b:62), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1727) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1727) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2607) esp_netif_handlers: sta ip: 10.57.86.101, mask: 255.255.255.0, gw: 10.57.86.139[0m
+[0;32mI (2607) local_admin: Connected: 10.57.86.101[0m
+[0;32mI (2607) cron: Using default timezone: UTC0[0m
+[0;32mI (2607) cron: Timezone applied: UTC0[0m
+[0;32mI (2607) cron: Initializing SNTP[0m
+[0;32mI (6527) cron: NTP time synchronized[0m
+[0;32mI (6617) cron: Current time: 2026-07-24 14:17:23[0m
+[0;32mI (7297) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (8397) telegram: No pending Telegram updates to flush[0m
+[0;32mI (8407) telegram: NETDIAG op=flush getUpdates ok=1 status=200 err=ESP_OK(0) errno=0(n/a) transport=unknown dur_ms=1789 poll_seq=0 res=0 stale=0 new=0 body_bytes=23 heap_free=149008 heap_delta=-4824 heap_min=105528 heap_largest=49152 rssi=-30 rssi_ok=1[0m
+[0;32mI (8417) telegram: Polling task started[0m
+[0;32mI (8427) telegram: Telegram tasks started[0m
+[0;32mI (8427) cron: Cron task started[0m
+[0;32mI (8427) main: [0m
+[0;32mI (8427) main: ========================================[0m
+[0;32mI (8437) main:   Ready! Free heap: 126404 bytes[0m
+[0;32mI (8437) main: ========================================[0m
+[0;32mI (8447) main: [0m
+[0;32mI (8447) http_gate: Waiting for HTTP gate (telegram_send)[0m
+[0;32mI (9037) esp-x509-crt-bundle: Certificate validated[0m

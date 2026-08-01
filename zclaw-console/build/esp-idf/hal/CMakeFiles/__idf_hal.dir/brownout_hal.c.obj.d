@@ -1,0 +1,24 @@
+esp-idf/hal/CMakeFiles/__idf_hal.dir/brownout_hal.c.obj: \
+ /home/meteora/esp/esp-idf/components/hal/brownout_hal.c \
+ /home/meteora/esp/esp-idf/components/hal/esp32s3/include/hal/brownout_ll.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdbool.h \
+ /home/meteora/esp/esp-idf/components/esp_common/include/esp_bit_defs.h \
+ /home/meteora/esp/esp-idf/components/soc/esp32s3/register/soc/rtc_cntl_struct.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stdint.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/stdint.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/_default_types.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/features.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/_newlib_version.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_intsup.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_stdint.h \
+ /home/meteora/esp/esp-idf/components/hal/platform_port/include/hal/regi2c_ctrl.h \
+ /home/meteora/esp/esp-idf/components/esp_hw_support/include/esp_private/regi2c_ctrl.h \
+ /home/meteora/esp/esp-idf/zclaw-console/build/config/sdkconfig.h \
+ /home/meteora/esp/esp-idf/components/esp_rom/include/esp_rom_regi2c.h \
+ /home/meteora/esp/esp-idf/components/soc/esp32s3/include/soc/regi2c_defs.h \
+ /home/meteora/esp/esp-idf/components/hal/include/hal/psdet_types.h \
+ /home/meteora/esp/esp-idf/components/soc/esp32s3/include/soc/regi2c_brownout.h \
+ /home/meteora/esp/esp-idf/components/hal/include/hal/brownout_hal.h \
+ /home/meteora/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/include/stddef.h \
+ /home/meteora/esp/esp-idf/components/soc/esp32s3/include/soc/soc_caps.h \
+ /home/meteora/esp/esp-idf/components/soc/esp32s3/include/soc/mpu_caps.h
