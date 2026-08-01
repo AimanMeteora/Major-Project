@@ -1,0 +1,23 @@
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40375d15: [0;33mpanic_abort[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m454[0m
+[0m--- 0x4037da35: [0;33mesp_system_abort[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40385ea5: [0;33m__assert_func[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/newlib/assert.c[0m[0m:[1;31m80[0m
+[0m--- 0x4206c277: [0;33mtcpip_send_msg_wait_sem[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c[0m[0m:[1;31m454[0m
+[0m--- 0x4207f50a: [0;33mnetconn_gethostbyname_addrtype[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/lwip/lwip/src/api/api_lib.c[0m[0m:[1;31m1333[0m
+[0m--- 0x42069615: [0;33mlwip_getaddrinfo[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/lwip/lwip/src/api/netdb.c[0m[0m:[1;31m495[0m
+[0m--- 0x420276e5: [0;33mgetaddrinfo[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/lwip/include/lwip/netdb.h[0m[0m:[1;31m23[0m
+[0m--- (inlined by) [0;33mesp_tls_hostname_to_fd[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp-tls/esp_tls.c[0m[0m:[1;31m210[0m
+[0m--- 0x42027a42: [0;33mtcp_connect[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp-tls/esp_tls.c[0m[0m:[1;31m359[0m
+[0m--- 0x42027d27: [0;33mesp_tls_low_level_conn[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp-tls/esp_tls.c[0m[0m:[1;31m456[0m
+[0m--- 0x42028021: [0;33mesp_tls_conn_new_sync[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp-tls/esp_tls.c[0m[0m:[1;31m544[0m
+[0m--- 0x42091af6: [0;33mssl_connect[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/tcp_transport/transport_ssl.c[0m[0m:[1;31m117[0m
+[0m--- 0x420b31c9: [0;33mesp_transport_connect[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/tcp_transport/transport.c[0m[0m:[1;31m123[0m
+[0m--- 0x420297a1: [0;33mesp_http_client_connect[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp_http_client/esp_http_client.c[0m[0m:[1;31m1482[0m
+[0m--- 0x4202a47f: [0;33mesp_http_client_perform[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp_http_client/esp_http_client.c[0m[0m:[1;31m1308[0m
+[0m--- 0x42012216: [0;33mllm_request[0m[0m at [0;32m/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/llm.c[0m[0m:[1;31m733[0m
+[0m--- 0x4200fb58: [0;33mprocess_message[0m[0m at [0;32m/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/agent.c[0m[0m:[1;31m563[0m
+[0m--- 0x420100d9: [0;33magent_task[0m[0m at [0;32m/home/meteora/esp/esp-idf/zclaw-console/components/zclaw/main/agent.c[0m[0m:[1;31m777[0m
+[0m--- 0x4037e541: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375c54: [0;33mesp_restart_noos[0m[0m at [0;32m/home/meteora/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m160[0m
+[0m

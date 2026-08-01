@@ -1,0 +1,3 @@
+/home/meteora/esp/esp-idf/zclaw-console/main/main.c:25:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   25 | static const char *TAG = "auth_console";
+      |                    ^~~
