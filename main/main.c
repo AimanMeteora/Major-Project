@@ -26,6 +26,10 @@
 #include "esp_event.h"
 #include "esp_wifi.h"
 
+/* Telegram / HTTPS Headers */
+#include "esp_http_client.h"
+#include "esp_crt_bundle.h"
+
 /* Subsystem Headers */
 #include "memory.h"
 #include "llm.h"
@@ -37,9 +41,13 @@ static const char *TAG = "auth_console";
 /* -------------------------------------------------------------------------- */
 /* Wi-Fi Credentials Configuration                                            */
 /* -------------------------------------------------------------------------- */
-#define WIFI_SSID      "WiFi SSID"
+#define WIFI_SSID      "WiFi"
 #define WIFI_PASS      "WiFi Password"
 #define WIFI_CONNECTED_BIT BIT0
+
+/* Telegram Bot Credentials - fill these in directly */
+#define TELEGRAM_BOT_TOKEN "Telegram Bot Token"
+#define TELEGRAM_CHAT_ID   "Telegram Chat ID"
 
 static EventGroupHandle_t s_wifi_event_group;
 
@@ -76,6 +84,13 @@ typedef struct {
 
 /* Audit Logging Rules */
 #define MAX_AUDIT_LOGS 10
+
+/* Telegram Alert Configuration */
+#define NVS_KEY_TG_TOKEN   "tg_token"
+#define NVS_KEY_TG_CHATID  "tg_chatid"
+#define TELEGRAM_TOKEN_MAX_LEN   64
+#define TELEGRAM_CHATID_MAX_LEN  32
+#define TELEGRAM_API_HOST "https://api.telegram.org"
 
 typedef enum {
     ROLE_NONE,
@@ -114,6 +129,11 @@ static TickType_t lockout_end_tick = 0;
 static audit_log_t audit_logs[MAX_AUDIT_LOGS];
 static int next_log_index = 0;
 static int total_logged_events = 0;
+
+/* Telegram config, loaded from NVS at boot */
+static char s_tg_bot_token[TELEGRAM_TOKEN_MAX_LEN] = {0};
+static char s_tg_chat_id[TELEGRAM_CHATID_MAX_LEN] = {0};
+static bool s_tg_configured = false;
 
 /* Queue handles for zclaw integration */
 static QueueHandle_t s_input_queue = NULL;
@@ -201,13 +221,159 @@ static void record_audit_event(const char *username, bool success) {
 
 static void save_user_db_to_nvs(void) {
     nvs_handle_t my_handle;
-    esp_err_t err = nvs_open(NVS_NAMESPACE, NVS_READWRITE, &my_handle);
+    esp_err_t err = nvs_open(AUTH_NVS_NAMESPACE, NVS_READWRITE, &my_handle);
     if (err == ESP_OK) {
         err = nvs_set_blob(my_handle, NVS_KEY_USERS, user_db, sizeof(user_db));
         if (err == ESP_OK) {
             nvs_commit(my_handle);
         }
         nvs_close(my_handle);
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Telegram Alerting                                                          */
+/* -------------------------------------------------------------------------- */
+
+/* Loads bot token / chat id at boot. Currently pulled straight from the
+ * TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID macros above - edit those and
+ * reflash to change credentials. (The old NVS-backed path is still there
+ * via `tg_set` if you ever want to switch to runtime configuration instead
+ * of baking secrets into the firmware image.) */
+static void load_telegram_config(void) {
+    strncpy(s_tg_bot_token, TELEGRAM_BOT_TOKEN, sizeof(s_tg_bot_token) - 1);
+    strncpy(s_tg_chat_id, TELEGRAM_CHAT_ID, sizeof(s_tg_chat_id) - 1);
+
+    if (strlen(s_tg_bot_token) > 1 && strlen(s_tg_chat_id) > 1) {
+        s_tg_configured = true;
+        ESP_LOGI(TAG, "Telegram alerting configured (chat_id=%s).", s_tg_chat_id);
+    } else {
+        ESP_LOGW(TAG, "TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set in source.");
+    }
+}
+
+static void save_telegram_config(const char *token, const char *chat_id) {
+    nvs_handle_t handle;
+    if (nvs_open(AUTH_NVS_NAMESPACE, NVS_READWRITE, &handle) == ESP_OK) {
+        nvs_set_str(handle, NVS_KEY_TG_TOKEN, token);
+        nvs_set_str(handle, NVS_KEY_TG_CHATID, chat_id);
+        nvs_commit(handle);
+        nvs_close(handle);
+    }
+}
+
+/* Percent-encodes text for use in a URL query parameter. dst must be at
+ * least 3x the size of src to be safe. */
+static void url_encode(const char *src, char *dst, size_t dst_size) {
+    static const char *hex = "0123456789ABCDEF";
+    size_t j = 0;
+    for (size_t i = 0; src[i] != '\0' && j + 4 < dst_size; i++) {
+        unsigned char c = (unsigned char)src[i];
+        if (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~') {
+            dst[j++] = (char)c;
+        } else if (c == ' ') {
+            dst[j++] = '+';
+        } else {
+            dst[j++] = '%';
+            dst[j++] = hex[(c >> 4) & 0xF];
+            dst[j++] = hex[c & 0xF];
+        }
+    }
+    dst[j] = '\0';
+}
+
+/* Non-blocking: hands the message off to the telegram queue. Safe to call
+ * from any task, including while holding session_mutex, since it never
+ * touches the network itself - the telegram_sender_task does that. */
+static void queue_telegram_alert(const char *fmt, ...) {
+    if (s_telegram_output_queue == NULL) {
+        return;
+    }
+    channel_output_msg_t msg;
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf(msg.text, sizeof(msg.text), fmt, args);
+    va_end(args);
+
+    if (xQueueSend(s_telegram_output_queue, &msg, 0) != pdTRUE) {
+        ESP_LOGW(TAG, "Telegram alert queue full, dropping message.");
+    }
+}
+
+/* Performs the actual HTTPS call to the Telegram Bot API. Runs only inside
+ * telegram_sender_task, never on the console/command task, so a slow or
+ * failed network call never blocks a login/command response. */
+static esp_err_t send_telegram_message_blocking(const char *text) {
+    if (!s_tg_configured) {
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    /* Heap-allocated rather than stack-allocated: the mbedtls TLS handshake
+     * that esp_http_client_perform() triggers below runs on THIS task's
+     * stack and can itself use 6-10KB+. Keeping these buffers off the
+     * stack avoids stacking that on top of already-large local arrays. */
+    const size_t encoded_len = 1024 * 3;
+    char *encoded_text = malloc(encoded_len);
+    if (encoded_text == NULL) {
+        return ESP_ERR_NO_MEM;
+    }
+    url_encode(text, encoded_text, encoded_len);
+
+    const size_t url_len = 256 + encoded_len;
+    char *url = malloc(url_len);
+    if (url == NULL) {
+        free(encoded_text);
+        return ESP_ERR_NO_MEM;
+    }
+    snprintf(url, url_len,
+             "%s/bot%s/sendMessage?chat_id=%s&text=%s",
+             TELEGRAM_API_HOST, s_tg_bot_token, s_tg_chat_id, encoded_text);
+
+    esp_http_client_config_t config = {
+        .url = url,
+        .method = HTTP_METHOD_GET,
+        .crt_bundle_attach = esp_crt_bundle_attach,
+        .timeout_ms = 8000,
+    };
+
+    esp_http_client_handle_t client = esp_http_client_init(&config);
+    if (client == NULL) {
+        free(url);
+        free(encoded_text);
+        return ESP_FAIL;
+    }
+
+    esp_err_t err = esp_http_client_perform(client);
+    if (err == ESP_OK) {
+        int status = esp_http_client_get_status_code(client);
+        if (status != 200) {
+            ESP_LOGW(TAG, "Telegram API returned HTTP %d", status);
+            err = ESP_FAIL;
+        }
+    } else {
+        ESP_LOGW(TAG, "Telegram HTTP request failed: %s", esp_err_to_name(err));
+    }
+
+    free(url);
+    free(encoded_text);
+
+    esp_http_client_cleanup(client);
+    return err;
+}
+
+static void telegram_sender_task(void *pvParameters) {
+    channel_output_msg_t msg;
+    while (1) {
+        if (xQueueReceive(s_telegram_output_queue, &msg, portMAX_DELAY) == pdTRUE) {
+            if (!s_tg_configured) {
+                ESP_LOGW(TAG, "Dropping Telegram alert - bot not configured: %s", msg.text);
+                continue;
+            }
+            esp_err_t err = send_telegram_message_blocking(msg.text);
+            if (err != ESP_OK) {
+                ESP_LOGE(TAG, "Failed to deliver Telegram alert.");
+            }
+        }
     }
 }
 
@@ -294,6 +460,7 @@ static void inactivity_watchdog_task(void *pvParameters) {
             TickType_t now = xTaskGetTickCount();
             if ((now - last_activity_tick) * portTICK_PERIOD_MS >= INACTIVITY_TIMEOUT_MS) {
                 printf("\n\n[Security Notice] Session timed out due to inactivity. Logged out user '%s'.\n", current_user);
+                queue_telegram_alert("Session timed out for user '%s' due to inactivity.", current_user);
                 current_role = ROLE_NONE;
                 memset(current_user, 0, sizeof(current_user));
                 printf("guest@esp32> ");
@@ -312,7 +479,7 @@ static void init_user_db(void) {
     size_t required_size = sizeof(user_db);
     bool loaded_from_nvs = false;
 
-    if (nvs_open(NVS_NAMESPACE, NVS_READONLY, &my_handle) == ESP_OK) {
+    if (nvs_open(AUTH_NVS_NAMESPACE, NVS_READONLY, &my_handle) == ESP_OK) {
         if (nvs_get_blob(my_handle, NVS_KEY_USERS, user_db, &required_size) == ESP_OK && required_size == sizeof(user_db)) {
             loaded_from_nvs = true;
         }
@@ -397,11 +564,15 @@ static int do_login(int argc, char **argv) {
 
     ESP_LOGW(TAG, "SECURITY ALERT: Failed login attempt for user '%s'. Consecutive fails: %d.", input_username, failed_attempts);
     printf("Error: Invalid username or password. (Failed tries: %d/%d)\n", failed_attempts, MAX_FAILED_ATTEMPTS);
+    queue_telegram_alert("SECURITY ALERT: Failed login attempt for user '%s'. Consecutive fails: %d/%d.",
+                          input_username, failed_attempts, MAX_FAILED_ATTEMPTS);
 
     if (failed_attempts >= MAX_FAILED_ATTEMPTS) {
         lockout_end_tick = xTaskGetTickCount() + pdMS_TO_TICKS(LOCKOUT_DURATION_MS);
         ESP_LOGW(TAG, "SECURITY LOCKOUT TRIPPED: System blocking console input for 15 seconds.");
         printf("[ALERT] Security Threshold Reached! Terminal locked for 15 seconds.\n");
+        queue_telegram_alert("ALERT: Login lockout triggered after %d failed attempts (last attempted user: '%s'). Console locked for %d seconds.",
+                              MAX_FAILED_ATTEMPTS, input_username, LOCKOUT_DURATION_MS / 1000);
     }
 
     xSemaphoreGive(session_mutex);
@@ -509,6 +680,8 @@ static int do_user_add(int argc, char **argv) {
             user_db[i].role = target_role;
             user_db[i].in_use = true;
             printf("User '%s' created successfully.\n", username);
+            queue_telegram_alert("Admin '%s' created new %s account '%s'.",
+                                  current_user, (target_role == ROLE_ADMIN) ? "admin" : "user", username);
             save_user_db_to_nvs();
             xSemaphoreGive(session_mutex);
             return 0;
@@ -551,6 +724,8 @@ static int do_user_upd(int argc, char **argv) {
             hash_password(new_password, user_db[i].salt, user_db[i].hash);
             user_db[i].role = new_role;
             printf("User account '%s' successfully updated.\n", username);
+            queue_telegram_alert("Admin '%s' updated account '%s' (new role: %s).",
+                                  current_user, username, (new_role == ROLE_ADMIN) ? "admin" : "user");
             save_user_db_to_nvs();
             xSemaphoreGive(session_mutex);
             return 0;
@@ -588,6 +763,7 @@ static int do_user_del(int argc, char **argv) {
             user_db[i].in_use = false;
             memset(&user_db[i], 0, sizeof(user_t));
             printf("User '%s' deleted successfully.\n", username);
+            queue_telegram_alert("Admin '%s' deleted account '%s'.", current_user, username);
             save_user_db_to_nvs();
             xSemaphoreGive(session_mutex);
             return 0;
@@ -679,6 +855,7 @@ static int do_toggle_relay(int argc, char **argv) {
     
     gpio_set_level((gpio_num_t)target_pin, next_state);
     printf("GPIO %d toggled to: %s by '%s'\n", target_pin, next_state ? "HIGH" : "LOW", current_user);
+    queue_telegram_alert("GPIO %d toggled to %s by user '%s'.", target_pin, next_state ? "HIGH" : "LOW", current_user);
 
     xSemaphoreGive(session_mutex);
     return 0;
@@ -702,6 +879,34 @@ static int do_pin_status(int argc, char **argv) {
     return 0;
 }
 
+/* Admin-only command to configure the Telegram bot at runtime, instead of
+ * hardcoding secrets in source. Usage: tg_set <bot_token> <chat_id> */
+static int do_tg_set(int argc, char **argv) {
+    xSemaphoreTake(session_mutex, portMAX_DELAY);
+    reset_inactivity_timer();
+    if (!is_authorized(ROLE_ADMIN)) {
+        printf("Access Denied: Admin role required.\n");
+        xSemaphoreGive(session_mutex);
+        return 1;
+    }
+    if (argc < 3) {
+        printf("Usage: tg_set <bot_token> <chat_id>\n");
+        xSemaphoreGive(session_mutex);
+        return 1;
+    }
+
+    strncpy(s_tg_bot_token, argv[1], sizeof(s_tg_bot_token) - 1);
+    strncpy(s_tg_chat_id, argv[2], sizeof(s_tg_chat_id) - 1);
+    save_telegram_config(s_tg_bot_token, s_tg_chat_id);
+    s_tg_configured = true;
+
+    printf("Telegram alerting configured. Sending test message...\n");
+    queue_telegram_alert("Telegram alerting configured on ESP32 console by admin '%s'.", current_user);
+
+    xSemaphoreGive(session_mutex);
+    return 0;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Command Registration & Main                                                */
 /* -------------------------------------------------------------------------- */
@@ -716,6 +921,7 @@ static void register_commands(void) {
     const esp_console_cmd_t logs_cmd   = { .command = "see_logs", .help = "View audit traces", .func = &do_see_logs };
     const esp_console_cmd_t relay_cmd  = { .command = "toggle_relay", .help = "Toggle pin state: toggle_relay <pin>", .func = &do_toggle_relay };
     const esp_console_cmd_t status_cmd = { .command = "pin_status", .help = "Check pin voltage: pin_status <pin>", .func = &do_pin_status };
+    const esp_console_cmd_t tgset_cmd  = { .command = "tg_set", .help = "Configure Telegram alerts: tg_set <bot_token> <chat_id>", .func = &do_tg_set };
 
     ESP_ERROR_CHECK(esp_console_cmd_register(&login_cmd));
     ESP_ERROR_CHECK(esp_console_cmd_register(&logout_cmd));
@@ -727,6 +933,7 @@ static void register_commands(void) {
     ESP_ERROR_CHECK(esp_console_cmd_register(&logs_cmd));
     ESP_ERROR_CHECK(esp_console_cmd_register(&relay_cmd));
     ESP_ERROR_CHECK(esp_console_cmd_register(&status_cmd));
+    ESP_ERROR_CHECK(esp_console_cmd_register(&tgset_cmd));
 }
 
 void app_main(void) {
@@ -751,6 +958,7 @@ void app_main(void) {
     memory_init();
     llm_init();
     init_user_db();
+    load_telegram_config();
     memset(audit_logs, 0, sizeof(audit_logs));
 
     // 5. Create FreeRTOS Queues & Agent Runtime
@@ -770,10 +978,11 @@ void app_main(void) {
     // 7. Launch Background Tasks
     xTaskCreate(inactivity_watchdog_task, "inactivity_watchdog", 3072, NULL, 5, &logout_task_handle);
     xTaskCreate(zclaw_response_task, "zclaw_resp", 12000, NULL, 5, NULL);
+    xTaskCreate(telegram_sender_task, "telegram_sender", 16384, NULL, 5, NULL);
 
     // 8. Launch Console REPL Framework
     esp_console_repl_config_t repl_config = ESP_CONSOLE_REPL_CONFIG_DEFAULT();
-    repl_config.prompt = "esp32@esp32> ";
+    repl_config.prompt = "aiman@esp32> ";
     repl_config.max_cmdline_length = 256;
 
     register_commands();
