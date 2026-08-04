@@ -73,4 +73,3 @@ These are worth addressing before treating this as production-grade:
 
 ## Project Contributors
 - **Aiman Yusuf** -  https://github.com/AimanMeteora
-- **Jeannie Pang** - 
